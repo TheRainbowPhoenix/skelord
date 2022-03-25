@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
 		<meta charset="utf-8" />
-		<meta name="description" content="Svelte demo app" />
+
+		<!-- section:seometa -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Discord" />
+		<meta property="og:title" content="Discord - A New Way to Chat with Friends & Communities" />
+		
+		<meta
+			property="og:description"
+			content="Discord is the easiest way to communicate over voice, video, and text.  Chat, hang out, and stay close with your friends and communities." />
+		<meta property="og:image" content="undefined//discord.com/assets/652f40427e1f5186ad54836074898279.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@discord" />
+    	<meta name="twitter:creator" content="@discord" />
+
+		<!-- endsection -->
+		<script>window.GLOBAL_ENV = {
+			API_ENDPOINT: '//discord.com/api',
+			API_VERSION: 6,
+			GATEWAY_ENDPOINT: 'wss://gateway.discord.gg',
+			WEBAPP_ENDPOINT: '//discord.com',
+			CDN_HOST: 'cdn.discordapp.com',
+			ASSET_ENDPOINT: '//discord.com',
+			MEDIA_PROXY_ENDPOINT: '//media.discordapp.net',
+			WIDGET_ENDPOINT: '//discord.com/widget',
+			INVITE_HOST: 'discord.gg',
+			GUILD_TEMPLATE_HOST: 'discord.new',
+			GIFT_CODE_HOST: 'discord.gift',
+			RELEASE_CHANNEL: 'stable',
+			MARKETING_ENDPOINT: '//discord.com',
+			BRAINTREE_KEY: 'production_5st77rrc_49pp2rp4phym7387_00',
+			STRIPE_KEY: 'pk_live_CUQtlpQUF0vufWpnpUmQvcdi_00',
+			NETWORKING_ENDPOINT: '//router.discordapp.net',
+			RTC_LATENCY_ENDPOINT: '//latency.discord.media/rtc',
+			ACTIVITY_APPLICATION_HOST: 'discordsays.com',
+			PROJECT_ENV: 'production',
+			REMOTE_AUTH_ENDPOINT: '//remote-auth-gateway.discord.gg',
+			SENTRY_TAGS: {"buildId":"4c440a8d8799925020e3730199162889479e00ef","buildType":"normal"},
+			MIGRATION_SOURCE_ORIGIN: 'https://discordapp.com',
+			MIGRATION_DESTINATION_ORIGIN: 'https://discord.com',
+			HTML_TIMESTAMP: Date.now(),
+			ALGOLIA_KEY: 'aca0d7082e4e63af5ba5917d5e96bed0_00',
+		};</script>
+
+		<script nonce="MTE3LDEzNCwyMzQsMTg1LDYzLDExNSwyMzMsMTIz">!function(){
+			if(null!=window.WebSocket){
+				if(function(n){
+					try{
+						var e=localStorage.getItem(n);
+						return null==e?null:JSON.parse(e)
+					} catch(n) {return null}
+				}
+				("token")&&!window.__OVERLAY__){
+					var n=null!=window.DiscordNative||null!=window.require?"etf":"json",e=window.GLOBAL_ENV.GATEWAY_ENDPOINT+"/?encoding="+n+"&v="+window.GLOBAL_ENV.API_VERSION+"&compress=zlib-stream";
+					console.log("[FAST CONNECT] connecting to: "+e);
+					var o=new WebSocket(e);
+					o.binaryType="arraybuffer";
+					var t=Date.now(),i={
+						open:!1,identify:!1,gateway:e,messages:[]
+					};
+					o.onopen=function(){
+						console.log("[FAST CONNECT] connected in "+(Date.now()-t)+"ms"),i.open=!0},o.onclose=o.onerror=function(){window._ws=null},o.onmessage=function(n){i.messages.push(n)},window._ws={ws:o,state:i
+					}
+				}
+			}
+		}(); </script>
+					
+		<link rel="prefetch" as="script" href="/assets/6ed941c1e1f25e90bba2.js"></link>
+		
 		<link rel="icon" href="%svelte.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- section:title -->
+		<title>Discord</title>
+    	<!-- endsection -->
+
+		
 		%svelte.head%
 	</head>
 	<body>
-		<div>%svelte.body%</div>
+		<div id="app-mount">%svelte.body%</div>
 	</body>
 </html>

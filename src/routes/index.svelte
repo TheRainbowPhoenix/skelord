@@ -4,56 +4,107 @@
 
 <script lang="ts">
 	import Counter from '$lib/Counter.svelte';
+	import GuildsNav from '$lib/components/guild_sidebar/GuildsNav.svelte';
+import ContentBase from '$lib/components/ContentBase.svelte';
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Skelord</title>
 </svelte:head>
 
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
+<div class="app">
+	<div class="bg"></div>
+	<div class="layers layers-rel">
+		<!-- each layers -->
+		<div aria-hidden="false" class="layer baseLayer">
+			<div class="container">
+				<GuildsNav />
+				<ContentBase />
+			</div>
+		</div> 
+	</div>
 
-		to your new<br />SvelteKit app
-	</h1>
 
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+</div>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
+	.app {
 		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: var(--background-tertiary);
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	.bg {
+		background-color: var(--background-tertiary);
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.layers-rel {
+		position: relative;
+    	overflow: hidden;
+	}
+
+	.layers {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+		overflow: hidden;
+		min-width: 0;
+		min-height: 0;
+	}
+
+	.layers > .layer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+
+	.layer {
+		background-color: var(--background-primary);
+	}
+
+	.layer.baseLayer {
+		background-color: transparent;
+	}
+
+	.container {
+		position: relative;
+		overflow: hidden;
 		width: 100%;
 		height: 100%;
-		top: 0;
-		display: block;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
 	}
+	
 </style>
