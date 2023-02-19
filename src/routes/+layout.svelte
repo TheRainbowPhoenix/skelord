@@ -1,5 +1,7 @@
-<script lang="ts">
+<script>
 	import SvgMasks from '$lib/components/common/SVGMasks.svelte';
+	import Header from './Header.svelte';
+	import './styles.css';
 	import '../app.css';
 </script>
 

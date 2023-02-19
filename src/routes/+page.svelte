@@ -1,11 +1,6 @@
-<script context="module" lang="ts">
-	export const prerender = true;
-</script>
-
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
 	import GuildsNav from '$lib/components/guild_sidebar/GuildsNav.svelte';
-import ContentBase from '$lib/components/ContentBase.svelte';
+	import ContentBase from '$lib/components/ContentBase.svelte';
 </script>
 
 <svelte:head>
@@ -13,7 +8,7 @@ import ContentBase from '$lib/components/ContentBase.svelte';
 </svelte:head>
 
 <div class="app">
-	<div class="bg"></div>
+	<div class="bg" />
 	<div class="layers layers-rel">
 		<!-- each layers -->
 		<div aria-hidden="false" class="layer baseLayer">
@@ -21,10 +16,8 @@ import ContentBase from '$lib/components/ContentBase.svelte';
 				<GuildsNav />
 				<ContentBase />
 			</div>
-		</div> 
+		</div>
 	</div>
-
-
 </div>
 
 <style>
@@ -54,7 +47,7 @@ import ContentBase from '$lib/components/ContentBase.svelte';
 
 	.layers-rel {
 		position: relative;
-    	overflow: hidden;
+		overflow: hidden;
 	}
 
 	.layers {
@@ -106,5 +99,4 @@ import ContentBase from '$lib/components/ContentBase.svelte';
 		display: -ms-flexbox;
 		display: flex;
 	}
-	
 </style>
