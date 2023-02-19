@@ -1,0 +1,12 @@
+isAppRoute:
+/channels/*
+/store/*
+/library/*
+/message-requests/*
+/activity/*
+
+CHANNEL
+/channels/:guildId/:channelId?/:messageId?
+
+CHANNEL_THREAD_VIEW
+/channels/:guildId/:channelId/:threadId

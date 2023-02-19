@@ -5,7 +5,7 @@ import type { ChannelRequest, ChannelPage } from './types';
  
 export const load: (a: ChannelRequest) => ChannelPage = (({ params }) => {
   console.log(params)
-  if (params.id === '@me') {
+  if (params.guildId === '@me') {
     return {
       title: 'Me',
       content: 'Your self channel'

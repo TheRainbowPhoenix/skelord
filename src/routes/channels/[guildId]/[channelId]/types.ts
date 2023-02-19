@@ -5,6 +5,7 @@ export type ChannelPage {
 
 export type ChannelRequest {
     params: {
-        id: string;
+        guildId: string;
+        channelId: string;
     }
 }
