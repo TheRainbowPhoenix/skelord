@@ -1,0 +1,45 @@
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    user-select: none;
+}
+
+.lookFilled.colorBrand {
+    color: var(--white-500);
+    background-color: var(--brand-color);
+}
+.lookFilled.colorBrand:hover {
+    background-color: var(--brand-color-560);
+}
+.lookFilled.colorBrand:active {
+    background-color: var(--brand-color-600);
+}
+.lookFilled.colorBrand:disabled,
+.lookFilled.colorBrand[aria-disabled=true] {
+    background-color: var(--brand-color);
+}
+
+.sizeSmall {
+    width: 60px;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+}
+
+.grow, .sizeIcon {
+    width: auto;
+}
+
+.lookFilled {
+    transition: background-color .17s ease,color .17s ease;
+}
